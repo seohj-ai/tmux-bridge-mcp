@@ -1,0 +1,55 @@
+{
+  "name": "tmux-bridge-mcp",
+  "version": "0.3.0",
+  "description": "Standalone MCP server + CLI adapters for cross-pane AI agent communication via tmux (Claude, Codex, OpenCode, CodeBuddy, Copilot, Grok, Gemini, Kimi)",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "tmux-bridge": "dist/cli.js",
+    "tmux-bridge-mcp": "dist/cli.js",
+    "kimi-tmux": "dist/kimi-adapter.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build",
+    "render:images": "node scripts/render-readme-images.mjs"
+  },
+  "keywords": [
+    "agent",
+    "bridge",
+    "claude",
+    "codebuddy",
+    "codex",
+    "copilot",
+    "gemini",
+    "grok",
+    "kimi",
+    "mcp",
+    "opencode",
+    "tmux"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/howardpen9/tmux-bridge.git"
+  },
+  "files": [
+    "dist",
+    "system-instruction",
+    "README.md"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.2"
+  }
+}
